@@ -22,18 +22,23 @@ import io.vov.vitamio.widget.VideoView;
  * Created by ashok on 9/21/16.
  */
 public class VideoPlayer extends AppCompatActivity {
+    public static final String EXTRA_VIDEO_URL = "video_url";
     private WebView webView;
     public static String pathToFileOrUrl ;
     private VideoView mVideoView;
     private ProgressBar load;
 
     @Override
-    protected void onCreate( Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.videoactivity);
         Vitamio.initialize(getBaseContext());
         setContentView(R.layout.videoactivity);
 
+
+        if (getIntent().getExtras() != null) {
+            pathToFileOrUrl = getIntent().getExtras().getString(EXTRA_VIDEO_URL);
+        }
 
         if (!LibsChecker.checkVitamioLibs(this))
             return;

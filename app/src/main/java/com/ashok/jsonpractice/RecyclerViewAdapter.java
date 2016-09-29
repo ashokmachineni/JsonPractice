@@ -32,14 +32,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder
 
     @Override
     public void onBindViewHolder(final RecyclerViewHolders holder, final int position) {
-        holder.title.setText(" " + itemList.get(position).getTitle());
+        holder.bind(itemList.get(position));
         //holder.category.setText(" " + itemList.get(position).getCategory());
         //holder.poster.setText("Song Author: " + itemList.get(position).getPoster());
-        Picasso.with(context.getApplicationContext()).load(itemList.get(position).getPoster()).into(holder.poster);
-
-
-
-
     }
 
     @Override

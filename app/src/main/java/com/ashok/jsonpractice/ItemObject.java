@@ -8,12 +8,12 @@ import com.google.gson.annotations.SerializedName;
 public class ItemObject {
     @SerializedName("title")
     private String title;
-    @SerializedName("category")
-    private String category;
-    @SerializedName("poster")
-    private String poster;
-    @SerializedName("videoUrl")
-    private String videoUrl;
+    /* @SerializedName("category")
+     private String category;*/
+    @SerializedName("image")
+    private String image;
+    @SerializedName("url")
+    private String url;
     /*public ItemObject(String title, String category, String poster) {
         this.songTitle = songTitle;
         this.songYear = songYear;
@@ -29,11 +29,11 @@ public class ItemObject {
         return songAuthor;
     }*/
 
-    public ItemObject(String title, String category, String poster, String videoUrl) {
+    public ItemObject(String title, String image, String url) {
         this.title = title;
-        this.category = category;
-        this.poster = poster;
-        this.videoUrl = videoUrl;
+        //this.category = category;
+        this.image = image;
+        this.url = url;
     }
 
     public String getTitle() {
@@ -44,27 +44,27 @@ public class ItemObject {
         this.title = title;
     }
 
-    public String getCategory() {
-        return category;
+    /* public String getCategory() {
+         return category;
+     }
+
+     public void setCategory(String category) {
+         this.category = category;
+     }
+ */
+    public String getImage() {
+        return image;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setImage(String image) {
+        this.image = image;
     }
 
-    public String getPoster() {
-        return poster;
+    public String getUrl() {
+        return url;
     }
 
-    public void setPoster(String poster) {
-        this.poster = poster;
-    }
-
-    public String getVideoUrl() {
-        return videoUrl;
-    }
-
-    public void setVideoUrl(String videoUrl) {
-        this.videoUrl = videoUrl;
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

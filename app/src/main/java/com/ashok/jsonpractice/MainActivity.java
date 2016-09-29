@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private void requestJsonObject(){
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url ="http://beroku.com/movie/videos.json";
+        String url = "http://thecodeeasy.com/movie/channelpearjson.json";
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
