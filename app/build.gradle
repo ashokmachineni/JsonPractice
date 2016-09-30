@@ -29,5 +29,6 @@ dependencies {
     compile 'com.google.code.gson:gson:2.6.1'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'me.neavo:vitamio:4.2.2'
-    compile 'com.google.android.exoplayer:exoplayer:r1.5.6'
+    compile 'com.google.android.exoplayer:exoplayer:r2.0.0'
+    compile 'org.greenrobot:eventbus:3.0.0'
 }

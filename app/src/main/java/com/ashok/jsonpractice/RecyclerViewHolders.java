@@ -6,18 +6,19 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
-
 /**
  * Created by ashok on 9/27/16.
  */
 public class RecyclerViewHolders extends RecyclerView.ViewHolder implements View.OnClickListener {
+
     public TextView title;
     public TextView category;
     public ImageView poster;
     Context ctx;
-    public RecyclerViewHolders(final View itemView) {
+
+    public RecyclerViewHolders(Context context, final View itemView) {
         super(itemView);
+        ctx = context;
         itemView.setOnClickListener(this);
         title = (TextView)itemView.findViewById(R.id.song_title);
         //category = (TextView)itemView.findViewById(R.id.song_year);
@@ -25,8 +26,6 @@ public class RecyclerViewHolders extends RecyclerView.ViewHolder implements View
         poster = (ImageView)itemView.findViewById(R.id.song_author);
 
        // Picasso.with(ctx).load(poster).into(poster);
-
-
     }
 
     @Override

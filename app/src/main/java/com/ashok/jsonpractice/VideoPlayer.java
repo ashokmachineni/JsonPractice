@@ -23,8 +23,8 @@ import io.vov.vitamio.widget.VideoView;
  */
 public class VideoPlayer extends AppCompatActivity {
     public static final String EXTRA_VIDEO_URL = "video_url";
-    private WebView webView;
     public static String pathToFileOrUrl ;
+    private WebView webView;
     private VideoView mVideoView;
     private ProgressBar load;
 

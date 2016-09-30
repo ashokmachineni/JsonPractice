@@ -6,7 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.squareup.picasso.Picasso;
+import com.ashok.jsonpractice.events.RecyclerItemClickEvent;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
 
@@ -16,23 +18,30 @@ import java.util.List;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolders> {
     private List<ItemObject> itemList;
     private Context context;
+
     public RecyclerViewAdapter(Context context,List<ItemObject> itemList){
         this.itemList = itemList;
         this.context = context;
-
     }
 
 
     @Override
     public RecyclerViewHolders onCreateViewHolder(ViewGroup parent, int viewType) {
         View layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, null);
-        RecyclerViewHolders rcv = new RecyclerViewHolders(layoutView);
+        RecyclerViewHolders rcv = new RecyclerViewHolders(context, layoutView);
         return rcv;
     }
 
     @Override
     public void onBindViewHolder(final RecyclerViewHolders holder, final int position) {
-        holder.bind(itemList.get(position));
+        holder.poster.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Toast.makeText(context, "url: "+ itemList.get(position).getUrl(), Toast.LENGTH_SHORT).show();
+                EventBus.getDefault().post(new RecyclerItemClickEvent(itemList.get(position).getUrl()));
+            }
+        });
+        holder.title.setText(itemList.get(position).getTitle());
         //holder.category.setText(" " + itemList.get(position).getCategory());
         //holder.poster.setText("Song Author: " + itemList.get(position).getPoster());
     }
