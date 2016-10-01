@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.ashok.jsonpractice.events.RecyclerItemClickEvent;
+import com.bumptech.glide.Glide;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -44,6 +45,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder
         holder.title.setText(itemList.get(position).getTitle());
         //holder.category.setText(" " + itemList.get(position).getCategory());
         //holder.poster.setText("Song Author: " + itemList.get(position).getPoster());
+        Glide.with(context).load(itemList.get(position).getImage()).into(holder.poster);
     }
 
     @Override

@@ -31,4 +31,5 @@ dependencies {
     compile 'me.neavo:vitamio:4.2.2'
     compile 'com.google.android.exoplayer:exoplayer:r2.0.0'
     compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
 }
